@@ -5,13 +5,13 @@ const Bikeparts = () => {
     const [parts, setParts] = useState([]);
 
     useEffect( ()=>{
-        fetch('bikeparts.json')
+        fetch('http://localhost:5000/bikepart')
         .then(res => res.json())
         .then(data => setParts(data))
     } ,[])
     return (
         <div>
-            <h2 className='text-center text-3xl m-5'>All bike parts </h2>
+            <h2 className='text-center text-3xl m-5 text-primary'>All bike parts </h2>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 ml-8'>
             
             {
