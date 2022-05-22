@@ -2,42 +2,54 @@
         "id": 1,
         "name": "Clutch and brake yokes",
         "price": "300",
+        "minOrder": "200",
+        "available": "2000",
         "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-        "img": "https://i.ibb.co/dGDkr4v/1.jpg"
+        "img": "https://i.ibb.co/q576Mjc/clutch-and-brake-yokes-250x250.jpg"
     },
     {
         "id": 2,
         "name": "Hero bike small roller",
         "price": "100",
+        "minOrder": "200",
+        "available": "2000",
         "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-        "img": "https://i.ibb.co/tY8dmnP/2.jpg"
+        "img": "https://i.ibb.co/bKkRxWj/exhaust-250x250.jpg"
     },
     {
         "id": 3,
         "name": "Exhaust",
         "price": "150",
+        "minOrder": "200",
+        "available": "2000",
         "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-        "img": "https://i.ibb.co/Yh04YVw/3.jpg"
+        "img": "https://i.ibb.co/zS8MbgX/hero-bike-small-roller-250x250.jpg"
     },
     {
         "id": 4,
         "name": "Hero deluxe eco motorcycle",
         "price": "180",
+        "minOrder": "200",
+        "available": "2000",
         "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-        "img": "https://i.ibb.co/ZX2Cbkn/4.jpg"
+        "img": "https://i.ibb.co/hC5T8Fp/hero-deluxe-eco-motorcycle-parts-250x250.png"
     },
     {
         "id": 5,
         "name": "Light",
         "price": "100",
+        "minOrder": "200",
+        "available": "2000",
         "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-        "img": "https://i.ibb.co/FgQ3jXp/5.jpg"
+        "img": "https://i.ibb.co/D1M0C6n/img-20191222-wa0037-250x250.jpg"
     },
     {
         "id": 6,
         "name": "Yamaha fnc shaft kgt",
         "price": "300",
+        "minOrder": "200",
+        "available": "2000",
         "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa",
-        "img": "https://i.ibb.co/zJy5ZDd/6.jpg"
+        "img": "https://i.ibb.co/zV2skhq/yamaha-fnc-shaft-kgt-m711s-a0x-250x250.png"
     }
 ]

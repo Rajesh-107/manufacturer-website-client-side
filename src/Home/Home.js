@@ -8,8 +8,6 @@ import BusinessSummary from './BusinessSummary';
 const Home = () => {
     return (
         <div>
-            <h2>This is home</h2>
-            
             <Banner></Banner>
              <Bikeparts></Bikeparts>
              <BusinessSummary></BusinessSummary>
