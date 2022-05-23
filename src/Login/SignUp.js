@@ -1,14 +1,15 @@
 import React from "react";
 import {
-  useSignInWithEmailAndPassword,
+  useCreateUserWithEmailAndPassword,
   useSignInWithGoogle,
+  useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import auth from "../firebase.init";
 import { useForm } from "react-hook-form";
 import Loading from "../Shared/Loading";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-const Login = () => {
+const SignUp = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   const {
     register,
@@ -16,42 +17,69 @@ const Login = () => {
     handleSubmit,
   } = useForm();
 
-  const [signInWithEmailAndPassword, user, loading, error] =
-    useSignInWithEmailAndPassword(auth);
+  const navigate = useNavigate();
+
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth);
+
+  const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
   let signInError;
-  const navigate = useNavigate();
-  const location = useLocation();
-  let from = location.state?.from?.pathname || "/";
 
-  if (loading || gLoading) {
+  if (loading || gLoading || updating) {
     return <Loading></Loading>;
   }
 
-  if (error || gError) {
+  if (error || gError || updateError) {
     signInError = (
       <p className='text-red-500'>
-        <small>{error?.message || gError?.message}</small>
+        <small>
+          {error?.message || gError?.message || updateError?.message}
+        </small>
       </p>
     );
   }
 
   if (gUser || user) {
-    navigate(from, { replace: true });
+    console.log(user);
   }
 
-  const onSubmit = (data) => {
-    console.log(data);
-    signInWithEmailAndPassword(data.email, data.password);
-    // navigate("/dashboard");
+  const onSubmit = async (data) => {
+    await createUserWithEmailAndPassword(data.email, data.password);
+    await updateProfile({ displayName: data.name, photoURL: data?.photoURL });
+    navigate("/dashboard");
   };
 
   return (
-    <div className='flex h-screen justify-center items-center'>
+    <div className='flex h-screen justify-center items-center m-10'>
       <div className='card w-96 bg-base-100 shadow-xl'>
         <div className='card-body'>
-          <h2 className='text-center text-2xl font-bold'>Log In</h2>
+          <h2 className='text-center text-2xl font-bold'>SignUp</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
+            <div className='form-control w-full max-w-xs'>
+              <label className='label'>
+                <span className='label-text'>Name</span>
+              </label>
+              <input
+                type='text'
+                placeholder='Your name'
+                className='input input-bordered w-full max-w-xs'
+                {...register("name", {
+                  required: {
+                    value: true,
+                    message: "Name is Required",
+                  },
+                })}
+              />
+              <label className='label'>
+                {errors.name?.type === "required" && (
+                  <span className='label-text-alt text-red-600'>
+                    {errors.name.message}
+                  </span>
+                )}
+              </label>
+            </div>
+
             <div className='form-control w-full max-w-xs'>
               <label className='label'>
                 <span className='label-text'>Email</span>
@@ -121,13 +149,13 @@ const Login = () => {
             <input
               className='btn w-full max-w-xs'
               type='submit'
-              value='Login'
+              value='SignUp'
             />
           </form>
           <p>
-            New here?
-            <Link className='text-primary p-2' to='/signup'>
-              Create New Account
+            Already have an account ?
+            <Link className='text-primary p-2' to='/login'>
+              Please Login
             </Link>
           </p>
           <div className='divider'>OR</div>
@@ -142,4 +170,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignUp;
