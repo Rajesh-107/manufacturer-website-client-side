@@ -3,6 +3,7 @@ import "./App.css";
 import Dashboard from "./Dashboard/Dashboard";
 import MyOrders from "./Dashboard/MyOrders";
 import About from "./Home/About";
+import Blogs from "./Home/Blogs";
 import Bikepart from "./Home/Bikepart";
 import BikePartDetail from "./Home/BikePartDetail";
 import Bikeparts from "./Home/Bikeparts";
@@ -25,6 +26,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/about' element={<About></About>}></Route>
+        <Route path='/blog' element={<Blogs></Blogs>}></Route>
         <Route
           path='/bikepart'
           element={
