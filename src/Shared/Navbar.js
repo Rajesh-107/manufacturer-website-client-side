@@ -6,6 +6,7 @@ import auth from "../firebase.init";
 
 const Navbar = () => {
   const [user, loading, error] = useAuthState(auth);
+  const [CheckUser] = useAuthState(auth);
 
   const logout = () => {
     signOut(auth);
@@ -31,7 +32,7 @@ const Navbar = () => {
         </li>
       )}
       <li>
-        {user ? (
+        {user || CheckUser ? (
           <button onClick={logout} className='btn btn-ghost'>
             SignOut
           </button>

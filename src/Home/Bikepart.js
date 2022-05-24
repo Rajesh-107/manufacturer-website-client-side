@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const Bikepart = ({ part }) => {
+const Bikepart = ({ part, setpartDetail }) => {
   const { _id, name, img, description, price, minOrder, available } = part;
 
   const navigate = useNavigate();
@@ -27,11 +27,12 @@ const Bikepart = ({ part }) => {
           </p>
         </div>
         <div className='card-actions'>
-          <button
-            onClick={() => detailsBikePart(_id)}
+          <label
+            for='book-modal'
+            onClick={() => setpartDetail(part)}
             className='btn btn-primary'>
-            Buy Now
-          </button>
+            Book Now
+          </label>
         </div>
       </div>
     </div>
@@ -39,26 +40,3 @@ const Bikepart = ({ part }) => {
 };
 
 export default Bikepart;
-
-{
-  /* <div>
-<div className="card w-96 bg-base-100 shadow-xl ">
-<figure className='px-10 pt-10'>
-<img src={img} alt="Shoes" />
-</figure>
-<div className="card-body">
-<h2 className="card-title">
-{name}
-</h2>
-<h5><small>Price:{price} </small></h5>
-<p>{description.slice(0,90)}</p>
-<p>MinOrder: {minOrder}</p>
-<h5>Available:{available} </h5>
-<div className="card-actions justify-end">
-
-<div className="btn btn-primary "><button className='text-white text-bold text-xl'>Purchase</button> </div>
-</div>
-</div>
-</div>
-</div> */
-}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
@@ -24,6 +24,12 @@ const Login = () => {
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
 
+  useEffect(() => {
+    if (gUser || user) {
+      navigate(from, { replace: true });
+    }
+  }, [user, gUser, from, navigate]);
+
   if (loading || gLoading) {
     return <Loading></Loading>;
   }
@@ -34,10 +40,6 @@ const Login = () => {
         <small>{error?.message || gError?.message}</small>
       </p>
     );
-  }
-
-  if (gUser || user) {
-    navigate(from, { replace: true });
   }
 
   const onSubmit = (data) => {

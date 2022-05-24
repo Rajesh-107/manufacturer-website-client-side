@@ -3,7 +3,9 @@ import "./App.css";
 import Dashboard from "./Dashboard/Dashboard";
 import MyOrders from "./Dashboard/MyOrders";
 import About from "./Home/About";
+import Bikepart from "./Home/Bikepart";
 import BikePartDetail from "./Home/BikePartDetail";
+import Bikeparts from "./Home/Bikeparts";
 import Home from "./Home/Home";
 import Review from "./Home/Review";
 import Login from "./Login/Login";
@@ -21,8 +23,13 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/about' element={<About></About>}></Route>
         <Route
-          path='/bikepart/:bikepartId'
-          element={<BikePartDetail></BikePartDetail>}></Route>
+          path='/bikepart'
+          element={
+            <RequireAuth>
+              <BikePartDetail></BikePartDetail>
+            </RequireAuth>
+          }></Route>
+
         <Route path='login' element={<Login></Login>}></Route>
         <Route path='signup' element={<SignUp></SignUp>}></Route>
         <Route
@@ -43,3 +50,9 @@ function App() {
 }
 
 export default App;
+
+{
+  /* <Route
+          path='/bikepart/:bikepartId'
+          element={<BikePartDetail></BikePartDetail>}></Route> */
+}
