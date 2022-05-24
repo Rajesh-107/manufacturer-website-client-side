@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const Bikepart = ({ part, setpartDetail }) => {
-  const { _id, name, img, description, price, minOrder, available } = part;
+  const { _id, partName, img, description, price, minOrder, available } = part;
 
   const navigate = useNavigate();
   const detailsBikePart = (id) => {
@@ -15,7 +15,7 @@ const Bikepart = ({ part, setpartDetail }) => {
         <img src={img} alt='Shoes' className='rounded-xl' />
       </figure>
       <div className='card-body items-center text-center'>
-        <h2 className='card-title'>{name}</h2>
+        <h2 className='card-title'>{partName}</h2>
         <p>{description}</p>
         <div>
           <p className='text-red-500'>Price ${price}</p>

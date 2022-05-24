@@ -1,6 +1,6 @@
 [{
         "id": 1,
-        "name": "Clutch and brake yokes",
+        "partName": "Clutch and brake yokes",
         "price": "300",
         "minOrder": "200",
         "available": "2000",
@@ -9,7 +9,7 @@
     },
     {
         "id": 2,
-        "name": "Hero bike small roller",
+        "partName": "Hero bike small roller",
         "price": "100",
         "minOrder": "200",
         "available": "2000",
@@ -18,7 +18,7 @@
     },
     {
         "id": 3,
-        "name": "Exhaust",
+        "partName": "Exhaust",
         "price": "150",
         "minOrder": "200",
         "available": "2000",
@@ -27,7 +27,7 @@
     },
     {
         "id": 4,
-        "name": "Hero deluxe eco motorcycle",
+        "partName": "Hero deluxe eco motorcycle",
         "price": "180",
         "minOrder": "200",
         "available": "2000",
@@ -36,7 +36,7 @@
     },
     {
         "id": 5,
-        "name": "Light",
+        "partName": "Light",
         "price": "100",
         "minOrder": "200",
         "available": "2000",
@@ -45,7 +45,7 @@
     },
     {
         "id": 6,
-        "name": "Yamaha fnc shaft kgt",
+        "partName": "Yamaha fnc shaft kgt",
         "price": "300",
         "minOrder": "200",
         "available": "2000",

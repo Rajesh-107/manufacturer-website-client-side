@@ -14,6 +14,9 @@ import SignUp from "./Login/SignUp";
 import Footer from "./Shared/Footer";
 import Navbar from "./Shared/Navbar";
 import NotFound from "./Shared/NotFound";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import MyProfile from "./Dashboard/MyProfile";
 
 function App() {
   return (
@@ -41,9 +44,11 @@ function App() {
           }>
           <Route index element={<MyOrders></MyOrders>}></Route>
           <Route path='review' element={<Review></Review>}></Route>
+          <Route path='profile' element={<MyProfile></MyProfile>}></Route>
         </Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
+      <ToastContainer />
       <Footer></Footer>
     </div>
   );

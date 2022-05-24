@@ -1,17 +1,42 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../firebase.init";
+import { toast } from "react-toastify";
 
 const BikePartDetail = ({ partDetail, setpartDetail }) => {
-  const { _id, name, img, price, minOrder, available } = partDetail;
-  const [user, loading, error] = useAuthState(auth);
+  const { _id, partName, img, price, minOrder, available } = partDetail;
+  const [user] = useAuthState(auth);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const name = event.target.name.value;
-    console.log(_id, name, price);
-    setpartDetail(null);
+
+    const booking = {
+      partDetailId: _id,
+      partDetailName: partName,
+      price: price,
+      minOrder: minOrder,
+      available: available,
+      myEmail: user.email,
+      name: user.displayName,
+      phone: event.target.phone.value,
+    };
+    fetch("http://localhost:5000/booking", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(booking),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.success) {
+          toast("You booking it");
+        }
+        setpartDetail(null);
+      });
   };
+
   return (
     <div>
       <input type='checkbox' id='book-modal' className='modal-toggle' />
@@ -23,7 +48,7 @@ const BikePartDetail = ({ partDetail, setpartDetail }) => {
             ✕
           </label>
 
-          <h3 className='font-bold text-lg'>Buy for : {name}</h3>
+          <h3 className='font-bold text-lg'>Buy for : {partName}</h3>
           <form
             onSubmit={handleSubmit}
             className='grid grid-cols-1 gap-3 justify-items-center mt-2'>
@@ -32,7 +57,7 @@ const BikePartDetail = ({ partDetail, setpartDetail }) => {
               type='text'
               placeholder='Type here'
               className='input input-bordered w-full max-w-xs'
-              value={name}
+              value={partName}
               disabled
             />
 
