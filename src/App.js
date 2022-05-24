@@ -17,7 +17,7 @@ import Navbar from "./Shared/Navbar";
 import NotFound from "./Shared/NotFound";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import MyProfile from "./Dashboard/MyProfile";
+import MyPortfolio from "./Home/MyPortfolio";
 
 function App() {
   return (
@@ -46,7 +46,7 @@ function App() {
           }>
           <Route index element={<MyOrders></MyOrders>}></Route>
           <Route path='review' element={<Review></Review>}></Route>
-          <Route path='profile' element={<MyProfile></MyProfile>}></Route>
+          <Route path='portfolio' element={<MyPortfolio></MyPortfolio>}></Route>
         </Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
