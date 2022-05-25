@@ -27,6 +27,10 @@ const SignUp = () => {
 
   const [token] = useToken(gUser || user);
 
+  if (token) {
+    navigate("/");
+  }
+
   let signInError;
 
   if (loading || gLoading || updating) {

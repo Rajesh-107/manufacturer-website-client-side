@@ -8,7 +8,12 @@ const MyOrders = () => {
 
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:5000/booking?myEmail=${user.email}`)
+      fetch(`http://localhost:5000/booking?myEmail=${user.email}`, {
+        method: "GET",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      })
         .then((res) => res.json())
         .then((data) => setOrder(data));
     }
@@ -24,8 +29,9 @@ const MyOrders = () => {
               <th></th>
               <th>Name</th>
               <th>PartName</th>
-              <th>You Order</th>
+              <th>Your Order</th>
               <th>Price</th>
+              <th>Total Price</th>
             </tr>
           </thead>
           <tbody>
@@ -36,6 +42,7 @@ const MyOrders = () => {
                 <td>{o.partDetailName}</td>
                 <td>{o.minOrder}</td>
                 <td>{o.price}</td>
+                <td>{o.totalPrice}</td>
               </tr>
             ))}
           </tbody>

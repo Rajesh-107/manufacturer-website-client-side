@@ -18,6 +18,7 @@ import NotFound from "./Shared/NotFound";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import MyPortfolio from "./Home/MyPortfolio";
+import MyProfile from "./Dashboard/MyProfile";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/blog' element={<Blogs></Blogs>}></Route>
+        <Route path='portfolio' element={<MyPortfolio></MyPortfolio>}></Route>
         <Route
           path='/bikepart'
           element={
@@ -46,7 +48,8 @@ function App() {
           }>
           <Route index element={<MyOrders></MyOrders>}></Route>
           <Route path='review' element={<Review></Review>}></Route>
-          <Route path='portfolio' element={<MyPortfolio></MyPortfolio>}></Route>
+
+          <Route path='profile' element={<MyProfile></MyProfile>}></Route>
         </Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>

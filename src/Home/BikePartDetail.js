@@ -9,7 +9,7 @@ const BikePartDetail = ({ partDetail, setpartDetail }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
+    const totalPrice = price * minOrder;
     const booking = {
       partDetailId: _id,
       partDetailName: partName,
@@ -19,6 +19,7 @@ const BikePartDetail = ({ partDetail, setpartDetail }) => {
       myEmail: user.email,
       name: user.displayName,
       phone: event.target.phone.value,
+      totalPrice,
     };
     fetch("http://localhost:5000/booking", {
       method: "POST",
