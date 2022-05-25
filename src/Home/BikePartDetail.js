@@ -75,7 +75,7 @@ const BikePartDetail = ({ partDetail, setpartDetail }) => {
                 type='number'
                 placeholder='Type here'
                 className='input input-bordered w-full max-w-xs'
-                value={minOrder}
+                value=''
               />
             </div>
             <div className='w-full max-w-xs'>
