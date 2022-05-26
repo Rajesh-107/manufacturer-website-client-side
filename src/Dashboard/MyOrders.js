@@ -70,10 +70,6 @@ const MyOrders = () => {
                     <span className='text-success'>Paid</span>
                   )}
                 </td>
-
-                <td>
-                  <button className='btn btn-xs'>Delete Order</button>
-                </td>
               </tr>
             ))}
           </tbody>

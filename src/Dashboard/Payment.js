@@ -32,13 +32,13 @@ const Payment = () => {
           <h2 className='text-success text-bold'>Hello {order.name}</h2>
           <h2 class='card-title'>pay for {order.partDetailName}</h2>
           <p>Make sure This is your Item </p>
-          <p className='text-red-500'>Please pay: ${order.price}</p>
+          <p className='text-red-500'>Please pay: ${order.totalPrice}</p>
         </div>
       </div>
       <div class='card flex-shrink-0 w-50 max-w-md shadow-2xl bg-base-100'>
         <div class='card-body'>
           <Elements stripe={stripePromise}>
-            <CheckoutForm />
+            <CheckoutForm order={order} />
           </Elements>
         </div>
       </div>
