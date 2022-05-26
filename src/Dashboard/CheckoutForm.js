@@ -14,7 +14,7 @@ const CheckoutForm = ({ order }) => {
   const { _id, price, name, myEmail } = order;
 
   useEffect(() => {
-    fetch("http://localhost:5000/create-payment-intent", {
+    fetch("https://shrouded-lake-78454.herokuapp.com/create-payment-intent", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -73,7 +73,7 @@ const CheckoutForm = ({ order }) => {
         order: _id,
         transactionId: transactionId.id,
       };
-      fetch(`http://localhost:5000/booking/${_id}`, {
+      fetch(`https://shrouded-lake-78454.herokuapp.com/booking/${_id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",

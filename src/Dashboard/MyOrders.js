@@ -12,7 +12,7 @@ const MyOrders = () => {
 
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:5000/booking?myEmail=${user.email}`, {
+      fetch(`https://shrouded-lake-78454.herokuapp.com/booking?myEmail=${user.email}`, {
         method: "GET",
         headers: {
           authorization: `Bearer ${localStorage.getItem("accessToken")}`,

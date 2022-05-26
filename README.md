@@ -1,4 +1,15 @@
-# Getting Started with Create React App
+# Bikeparts Manufacture
+
+- adminId: usxa@gamil.com
+- pass: 123456
+
+- This is my full stack projects, after all there is some mistake, but still trying to fix.
+- This application made with
+
+* FrontEnd: ReactJs, Tailwind
+* Backend : Node js, ExpressJs, Firebase for authentication, Database: MongoDb
+* there is payment method used , name Stripe
+* JWT token used here
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

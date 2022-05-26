@@ -21,7 +21,7 @@ const BikePartDetail = ({ partDetail, setpartDetail }) => {
       phone: event.target.phone.value,
       totalPrice,
     };
-    fetch("http://localhost:5000/booking", {
+    fetch("https://shrouded-lake-78454.herokuapp.com/booking", {
       method: "POST",
       headers: {
         "content-type": "application/json",

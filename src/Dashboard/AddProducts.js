@@ -13,7 +13,9 @@ const AddProducts = () => {
   } = useForm();
 
   const { data: bikepart, isLoading } = useQuery("bikepart", () =>
-    fetch("http://localhost:5000/bikepart").then((res) => res.json())
+    fetch("https://shrouded-lake-78454.herokuapp.com/bikepart").then((res) =>
+      res.json()
+    )
   );
 
   const imgStorageKey = "6f97ad377dcf0d64d08a83c1cbd9e4ce";
@@ -41,7 +43,7 @@ const AddProducts = () => {
             img: img,
           };
           console.log("imgbbbbb", result);
-          fetch("http://localhost:5000/product", {
+          fetch("https://shrouded-lake-78454.herokuapp.com/product", {
             method: "POST",
             headers: {
               "content-type": "application/json",
@@ -61,7 +63,7 @@ const AddProducts = () => {
         }
       });
 
-    const homeUrl = `http://localhost:5000/bikepart`;
+    const homeUrl = `https://shrouded-lake-78454.herokuapp.com/bikepart`;
     fetch(homeUrl, {
       method: "POST",
       headers: {
@@ -75,7 +77,7 @@ const AddProducts = () => {
       });
   };
   if (isLoading) {
-    return <Loading></Loading>;
+    return <Loading> </Loading>;
   }
 
   return (
@@ -198,5 +200,4 @@ const AddProducts = () => {
     </div>
   );
 };
-
 export default AddProducts;

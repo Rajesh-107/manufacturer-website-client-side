@@ -15,7 +15,7 @@ const ProductRow = ({ product, index, refetch, setDeleteProduct }) => {
   } = product;
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/product/${_id}`, {
+    fetch(`https://shrouded-lake-78454.herokuapp.com/product/${_id}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

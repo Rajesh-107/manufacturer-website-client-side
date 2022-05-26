@@ -7,7 +7,7 @@ const Bikeparts = () => {
   const [partDetail, setpartDetail] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:5000/bikepart")
+    fetch("https://shrouded-lake-78454.herokuapp.com/bikepart")
       .then((res) => res.json())
       .then((data) => setParts(data));
   }, []);
@@ -30,5 +30,4 @@ const Bikeparts = () => {
     </div>
   );
 };
-
 export default Bikeparts;
