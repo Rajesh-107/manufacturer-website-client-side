@@ -67,7 +67,13 @@ const MyOrders = () => {
                     </Link>
                   )}
                   {o.price && o.paid && (
-                    <span className='text-success'>Paid</span>
+                    <div>
+                      <span className='text-success'>Paid</span>
+                      <p>
+                        Transaction id:
+                        <span className='text-success'>{o.transactionId}</span>
+                      </p>
+                    </div>
                   )}
                 </td>
               </tr>
