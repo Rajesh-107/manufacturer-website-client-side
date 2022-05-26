@@ -32,7 +32,7 @@ const BikePartDetail = ({ partDetail, setpartDetail }) => {
       .then((data) => {
         console.log(data);
         if (data.success) {
-          toast("You booking it");
+          toast.success("You booking it");
         }
         setpartDetail(null);
       });
@@ -76,7 +76,7 @@ const BikePartDetail = ({ partDetail, setpartDetail }) => {
                 type='number'
                 placeholder='Type here'
                 className='input input-bordered w-full max-w-xs'
-                value=''
+                value={minOrder}
               />
             </div>
             <div className='w-full max-w-xs'>

@@ -28,6 +28,7 @@ const MyOrders = () => {
           return res.json();
         })
         .then((data) => {
+          console.log(data);
           setOrder(data);
         });
     }
@@ -36,6 +37,7 @@ const MyOrders = () => {
   return (
     <div>
       <h2>My Orders: {order.length}</h2>
+
       <div className='overflow-x-auto'>
         <table className='table w-full'>
           <thead>
@@ -47,6 +49,7 @@ const MyOrders = () => {
               <th>Price</th>
               <th>Total Price</th>
               <th>Pay</th>
+              <th>Delete Order</th>
             </tr>
           </thead>
           <tbody>
@@ -59,7 +62,10 @@ const MyOrders = () => {
                 <td>{o.price}</td>
                 <td>{o.totalPrice}</td>
                 <td>
-                  <button class='btn btn-xs'>Pay</button>
+                  <button className='btn btn-xs'>Pay</button>
+                </td>
+                <td>
+                  <button className='btn btn-xs'>Delete Order</button>
                 </td>
               </tr>
             ))}
