@@ -4,9 +4,9 @@ import Dashboard from "./Dashboard/Dashboard";
 import MyOrders from "./Dashboard/MyOrders";
 import About from "./Home/About";
 import Blogs from "./Home/Blogs";
-import Bikepart from "./Home/Bikepart";
+
 import BikePartDetail from "./Home/BikePartDetail";
-import Bikeparts from "./Home/Bikeparts";
+
 import Home from "./Home/Home";
 import Review from "./Home/Review";
 import Login from "./Login/Login";
@@ -22,6 +22,8 @@ import MyProfile from "./Dashboard/MyProfile";
 import Users from "./Dashboard/Users";
 import AddProducts from "./Dashboard/AddProducts";
 import RequireAdmin from "./Login/RequireAdmin";
+import ManageProduct from "./Dashboard/ManageProduct";
+import Payment from "./Dashboard/Payment";
 
 function App() {
   return (
@@ -52,11 +54,19 @@ function App() {
           <Route index element={<MyOrders></MyOrders>}></Route>
           <Route path='review' element={<Review></Review>}></Route>
           <Route path='profile' element={<MyProfile></MyProfile>}></Route>
+          <Route path='payment/:id' element={<Payment></Payment>}></Route>
           <Route
             path='addProduct'
             element={
               <RequireAdmin>
                 <AddProducts></AddProducts>
+              </RequireAdmin>
+            }></Route>
+          <Route
+            path='manageProduct'
+            element={
+              <RequireAdmin>
+                <ManageProduct></ManageProduct>
               </RequireAdmin>
             }></Route>
           <Route

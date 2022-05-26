@@ -18,9 +18,11 @@ const Dashboard = () => {
       <div className='drawer-side'>
         <label for='dashboard-sidebar' className='drawer-overlay'></label>
         <ul className='menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content'>
-          <li>
-            <Link to='/dashboard'>My Order</Link>
-          </li>
+          {user && (
+            <li>
+              <Link to='/dashboard'>My Order</Link>
+            </li>
+          )}
 
           <li>
             <Link to='/dashboard/review'>Review</Link>
@@ -38,6 +40,11 @@ const Dashboard = () => {
           {admin && (
             <li>
               <Link to='/dashboard/addProduct'>Add Product</Link>
+            </li>
+          )}
+          {admin && (
+            <li>
+              <Link to='/dashboard/manageProduct'>Manage Product</Link>
             </li>
           )}
         </ul>
