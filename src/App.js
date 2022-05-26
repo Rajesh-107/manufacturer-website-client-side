@@ -24,6 +24,7 @@ import AddProducts from "./Dashboard/AddProducts";
 import RequireAdmin from "./Login/RequireAdmin";
 import ManageProduct from "./Dashboard/ManageProduct";
 import Payment from "./Dashboard/Payment";
+import ManageAllProducts from "./Dashboard/ManageAllProducts";
 
 function App() {
   return (
@@ -67,6 +68,13 @@ function App() {
             element={
               <RequireAdmin>
                 <ManageProduct></ManageProduct>
+              </RequireAdmin>
+            }></Route>
+          <Route
+            path='manageAllProduct'
+            element={
+              <RequireAdmin>
+                <ManageAllProducts></ManageAllProducts>
               </RequireAdmin>
             }></Route>
           <Route

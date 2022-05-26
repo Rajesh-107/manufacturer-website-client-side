@@ -12,29 +12,33 @@ const Dashboard = () => {
     <div className='drawer drawer-mobile'>
       <input id='dashboard-sidebar' type='checkbox' className='drawer-toggle' />
       <div className='drawer-content'>
-        <h2 className='text-3xl font-bold text-blue-300'>My Dashboard</h2>
+        <h2 className='text-3xl text-center font-bold text-blue-300'>
+          My Dashboard
+        </h2>
         <Outlet></Outlet>
       </div>
       <div className='drawer-side'>
         <label for='dashboard-sidebar' className='drawer-overlay'></label>
         <ul className='menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content'>
-          {user && (
+          {!admin && (
             <li>
               <Link to='/dashboard'>My Order</Link>
             </li>
           )}
 
-          <li>
-            <Link to='/dashboard/review'>Review</Link>
-          </li>
-          {admin && (
+          {!admin && (
+            <li>
+              <Link to='/dashboard/review'>Review</Link>
+            </li>
+          )}
+          {
             <li>
               <Link to='/dashboard/profile'>My Profile</Link>
             </li>
-          )}
+          }
           {admin && (
             <li>
-              <Link to='/dashboard/user'>All User</Link>
+              <Link to='/dashboard/user'>Make Admin</Link>
             </li>
           )}
           {admin && (
@@ -45,6 +49,11 @@ const Dashboard = () => {
           {admin && (
             <li>
               <Link to='/dashboard/manageProduct'>Manage Product</Link>
+            </li>
+          )}
+          {admin && (
+            <li>
+              <Link to='/dashboard/manageAllProduct'>Manage ALL Product</Link>
             </li>
           )}
         </ul>
