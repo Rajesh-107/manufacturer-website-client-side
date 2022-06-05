@@ -1,5 +1,6 @@
 # Bikeparts Manufacture
 
+Live link: https://manufacturer-app-a28f4.web.app
 - adminId: usxa@gamil.com
 - pass: 123456
 
